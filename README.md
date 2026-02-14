@@ -6,7 +6,7 @@
 
 **Tutorial:**
 1. Go to ribbon "New Report"
-2. Fill in the respective information for the project. Turn on the GPS to record the GPS coordinates data.
+2. Fill in the respective information for the project. On the top right corner, please select the role. Turn on the GPS and click on "Device GPS" to record the GPS coordinates data for the report.
 3. Fill in the information for the team members.
 4. Select the amount of layouts required for site plan, then click Apply. (Max. 10 site plan for PLCISv9)
 5. Upload all the required plan. (Only applicable for one page of plan per layout)
