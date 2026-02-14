@@ -1,4 +1,4 @@
 # PLCIS
-**<u>ProjectLink Construction Intelligence System</u>**  
+**ProjectLink Construction Intelligence System**  
   
-  An integrated system to manage the construction information
+  _An integrated system to manage the construction information._
