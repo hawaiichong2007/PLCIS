@@ -358,12 +358,12 @@
         .canvas-wrapper { position: relative; width: 100%; height: 600px; overflow: hidden; background: #e5e7eb; touch-action: none; }
         .canvas-viewport { position: absolute; top: 0; left: 0; transform-origin: 0 0; transition: transform 0.1s ease-out; }
         .pins-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .plan-pin { position: absolute; width: 32px; height: 32px; transform: translate(-50%, -100%); cursor: pointer; pointer-events: auto; z-index: 10; transition: transform 0.2s; }
-        .plan-pin:hover { transform: translate(-50%, -100%) scale(1.2); z-index: 20; }
+        .plan-pin { position: absolute; width: 44px; height: 44px; transform: translate(-50%, -100%); cursor: pointer; pointer-events: auto; z-index: 10; transition: transform 0.2s; }
+        .plan-pin:hover { transform: translate(-50%, -100%) scale(1.1); z-index: 20; }
         .plan-pin-marker { width: 100%; height: 100%; position: relative; }
-        .plan-pin-head { width: 24px; height: 24px; border-radius: 50% 50% 50% 0; background: var(--color, #3b82f6); position: absolute; transform: rotate(-45deg); left: 4px; top: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
-        .plan-pin-number { transform: rotate(45deg); color: white; font-weight: 700; font-size: 12px; }
-        .plan-pin-photo-badge { position: absolute; bottom: -4px; right: -4px; background: var(--accent); color: white; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; border: 2px solid white; }
+        .plan-pin-head { width: 36px; height: 36px; border-radius: 50% 50% 50% 0; background: var(--color, #3b82f6); position: absolute; transform: rotate(-45deg); left: 4px; top: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+        .plan-pin-number { transform: rotate(45deg); color: white; font-weight: 700; font-size: 14px; }
+        .plan-pin-photo-badge { position: absolute; bottom: -4px; right: -4px; background: var(--accent); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; border: 2px solid white; }
         .plan-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.9); color: white; padding: 8px 12px; border-radius: 6px; font-size: 0.875rem; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.3s; margin-bottom: 8px; z-index: 30; }
         .plan-pin:hover .plan-tooltip { opacity: 1; }
 
@@ -448,11 +448,11 @@
         .layout-canvas-wrapper { position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
         .layout-image { display: block; max-width: none; user-select: none; -webkit-user-drag: none; pointer-events: none; }
         .pins-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
-        .pin-marker { position: absolute; width: 28px; height: 28px; transform: translate(-50%, -100%); cursor: pointer; pointer-events: auto; z-index: 10; }
-        .pin-marker:hover { transform: translate(-50%, -100%) scale(1.2); z-index: 20; }
-        .pin-head { width: 24px; height: 24px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 2px 4px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
-        .pin-number { transform: rotate(45deg); color: white; font-weight: 700; font-size: 11px; }
-        .pin-photo-indicator { position: absolute; bottom: -2px; right: -2px; background: var(--accent); color: white; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; border: 2px solid white; }
+        .pin-marker { position: absolute; width: 40px; height: 40px; transform: translate(-50%, -100%); cursor: pointer; pointer-events: auto; z-index: 10; }
+        .pin-marker:hover { transform: translate(-50%, -100%) scale(1.1); z-index: 20; }
+        .pin-head { width: 32px; height: 32px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); box-shadow: 0 2px 4px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
+        .pin-number { transform: rotate(45deg); color: white; font-weight: 700; font-size: 13px; }
+        .pin-photo-indicator { position: absolute; bottom: -2px; right: -2px; background: var(--accent); color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; border: 2px solid white; }
         .pin-tooltip { position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.85); color: white; padding: 6px 10px; border-radius: 4px; font-size: 0.75rem; white-space: nowrap; opacity: 0; transition: opacity 0.2s; pointer-events: none; margin-bottom: 4px; }
         .pin-marker:hover .pin-tooltip { opacity: 1; }
 
@@ -515,6 +515,25 @@
                 max-height: 180mm !important;
             }
         }
+
+        /* Pin Color Picker */
+        .color-picker-row { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+        .color-input { width: 50px; height: 36px; border: 2px solid var(--border); border-radius: 6px; cursor: pointer; padding: 2px; }
+        .color-label { font-size: 0.875rem; font-weight: 600; min-width: 100px; }
+
+        /* Multi-photo link indicator */
+        .multi-photo-indicator { position: absolute; top: 8px; left: 8px; background: var(--success); color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+        
+        /* Linked Photos List in Pin */
+        .linked-photos-list { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+        .linked-photo-mini { width: 24px; height: 24px; border-radius: 4px; object-fit: cover; border: 1px solid var(--border); cursor: pointer; }
+        
+        /* Add Photo to Pin Modal */
+        .add-photo-to-pin-modal .modal-content { max-width: 700px; }
+        .current-linked-photos { margin-bottom: 1rem; padding: 1rem; background: #f8fafc; border-radius: 8px; }
+        .linked-photo-item { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0.25rem; padding: 0.5rem; background: white; border-radius: 6px; border: 1px solid var(--border); }
+        .linked-photo-item img { width: 40px; height: 40px; border-radius: 4px; object-fit: cover; }
+        .remove-photo-btn { width: 24px; height: 24px; border: none; background: #fee2e2; color: var(--danger); border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; }
     </style>
 </head>
 <body>
@@ -631,7 +650,7 @@
                         <h2 class="card-title"><i class="fas fa-user"></i> Personnel & Conditions</h2>
                         
                         <div class="form-group">
-                            <label class="form-label">Engineer Name</label>
+                            <label class="form-label">Name</label>
                             <input type="text" class="form-input" id="engineerName" placeholder="Your name">
                         </div>
 
@@ -722,6 +741,9 @@
                 <div class="export-actions">
                     <button class="btn btn-success" onclick="saveReport()">
                         <i class="fas fa-save"></i> Save Site Report
+                    </button>
+                    <button class="btn btn-secondary" onclick="loadDraftManual()">
+                        <i class="fas fa-undo"></i> Restore Last Draft
                     </button>
                     <button class="btn btn-outline" onclick="previewReport()">
                         <i class="fas fa-eye"></i> Preview A4 Layout
@@ -971,6 +993,33 @@
         </div>
     </div>
 
+    <!-- Add Photo to Pin Modal -->
+    <div id="addPhotoToPinModal" class="modal add-photo-to-pin-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Manage Pin Photos</h3>
+                <button class="modal-close" onclick="closeAddPhotoToPinModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="current-linked-photos" id="currentLinkedPhotos">
+                    <strong>Currently Linked Photos:</strong>
+                    <div id="linkedPhotosList" style="margin-top: 0.5rem;"></div>
+                </div>
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">
+                    Click photos below to add to this pin:
+                </p>
+                <div id="addPhotoGrid" class="photo-select-grid">
+                    <!-- Dynamic photo grid -->
+                </div>
+            </div>
+            <div style="padding: 1rem; border-top: 1px solid var(--border); display: flex; gap: 0.5rem;">
+                <button class="btn btn-secondary" onclick="closeAddPhotoToPinModal()" style="flex: 1;">
+                    <i class="fas fa-times"></i> Close
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Map Picker Modal -->
     <div id="mapModal" class="modal">
         <div class="modal-content map-modal-content">
@@ -1067,6 +1116,41 @@
         </div>
     </div>
 
+    <!-- Pin Color Picker Modal -->
+    <div id="pinColorModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <div class="modal-header">
+                <h3>Change Pin Color</h3>
+                <button class="modal-close" onclick="closePinColorModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Select Color</label>
+                    <input type="color" class="form-input" id="pinColorInput" value="#3b82f6" style="height: 50px; cursor: pointer;">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Or Choose Preset:</label>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button class="btn btn-sm" style="background: #3b82f6; color: white; width: auto;" onclick="setPresetColor('#3b82f6')">Blue</button>
+                        <button class="btn btn-sm" style="background: #ef4444; color: white; width: auto;" onclick="setPresetColor('#ef4444')">Red</button>
+                        <button class="btn btn-sm" style="background: #10b981; color: white; width: auto;" onclick="setPresetColor('#10b981')">Green</button>
+                        <button class="btn btn-sm" style="background: #f59e0b; color: white; width: auto;" onclick="setPresetColor('#f59e0b')">Orange</button>
+                        <button class="btn btn-sm" style="background: #8b5cf6; color: white; width: auto;" onclick="setPresetColor('#8b5cf6')">Purple</button>
+                        <button class="btn btn-sm" style="background: #ec4899; color: white; width: auto;" onclick="setPresetColor('#ec4899')">Pink</button>
+                        <button class="btn btn-sm" style="background: #06b6d4; color: white; width: auto;" onclick="setPresetColor('#06b6d4')">Cyan</button>
+                        <button class="btn btn-sm" style="background: #84cc16; color: white; width: auto;" onclick="setPresetColor('#84cc16')">Lime</button>
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 1rem; border-top: 1px solid var(--border); display: flex; gap: 0.5rem;">
+                <button class="btn btn-secondary" onclick="closePinColorModal()" style="flex: 1;">Cancel</button>
+                <button class="btn btn-primary" onclick="applyPinColor()" style="flex: 1;">
+                    <i class="fas fa-check"></i> Apply Color
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Loading Overlay -->
     <div id="loadingOverlay" class="loading-overlay">
         <div class="spinner"></div>
@@ -1100,7 +1184,7 @@
             mapSnapshot: null
         };
 
-        let reports = JSON.parse(localStorage.getItem('plcis_reports') || '[]');
+        let reports = [];
         let currentPhotoIndex = null;
         let selectedPhotoIndex = null;
         let currentRole = null;
@@ -1110,6 +1194,7 @@
         const MAX_LAYOUTS = 10;
         let layoutStates = {};
         let pendingPin = null;
+        let editingPinColor = null; // Stores {layoutIndex, pinId} when editing color
 
         // Role Configuration
         const roleConfig = {
@@ -1143,7 +1228,106 @@
             loadReportsList();
             initializeLayouts();
             loadTeamMembers();
+            
+            // Auto-save draft every 30 seconds
+            setInterval(autoSaveDraft, 30000);
+            
+            // Load draft on startup
+            loadDraft();
         });
+
+        // Draft Management
+        function autoSaveDraft() {
+            // Capture latest form values
+            const projectName = document.getElementById('projectName').value;
+            const location = document.getElementById('siteLocation').value;
+            
+            // Only update currentReport if we're not in the middle of a specific report edit
+            // (Actually, currentReport should always reflect the current state of the "New Report" tab)
+            currentReport.projectName = projectName;
+            currentReport.location = location;
+            currentReport.date = document.getElementById('reportDate').value;
+            currentReport.engineer = document.getElementById('engineerName').value;
+            currentReport.weather = document.getElementById('weather').value;
+            currentReport.activities = document.getElementById('activities').value;
+            currentReport.issues = document.getElementById('issues').value;
+            currentReport.nextSteps = document.getElementById('nextSteps').value;
+
+            // Only save if there's meaningful content
+            if (projectName || currentReport.photos.length > 0 || currentReport.layouts.some(l => l.hasContent)) {
+                currentReport.lastSaved = new Date().toISOString();
+                localStorage.setItem('plcis_draft', JSON.stringify(currentReport));
+                console.log('Draft auto-saved');
+            }
+        }
+
+        function loadDraft() {
+            const draft = localStorage.getItem('plcis_draft');
+            if (draft) {
+                try {
+                    const parsed = JSON.parse(draft);
+                    const draftDate = new Date(parsed.lastSaved || 0);
+                    const today = new Date();
+                    
+                    // Auto-prompt only if it's from today and has actual content
+                    if (draftDate.toDateString() === today.toDateString()) {
+                        if (confirm('You have an unsaved draft from today. Would you like to restore it?')) {
+                            restoreDraftData(parsed);
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error parsing draft:', e);
+                }
+            }
+        }
+
+        function loadDraftManual() {
+            const draft = localStorage.getItem('plcis_draft');
+            if (draft) {
+                try {
+                    const parsed = JSON.parse(draft);
+                    const draftDate = new Date(parsed.lastSaved || 0);
+                    if (confirm(`Restore draft from ${draftDate.toLocaleString()}?`)) {
+                        restoreDraftData(parsed);
+                        showToast('Draft restored successfully');
+                    }
+                } catch (e) {
+                    console.error('Error loading draft:', e);
+                    showToast('Failed to load draft');
+                }
+            } else {
+                showToast('No saved draft found');
+            }
+        }
+
+        function restoreDraftData(data) {
+            currentReport = data;
+            
+            // Restore form fields
+            document.getElementById('projectName').value = currentReport.projectName || '';
+            document.getElementById('siteLocation').value = currentReport.location || '';
+            document.getElementById('reportDate').value = currentReport.date || new Date().toISOString().split('T')[0];
+            document.getElementById('engineerName').value = currentReport.engineer || '';
+            document.getElementById('weather').value = currentReport.weather || 'Clear';
+            document.getElementById('activities').value = currentReport.activities || '';
+            document.getElementById('issues').value = currentReport.issues || '';
+            document.getElementById('nextSteps').value = currentReport.nextSteps || '';
+            
+            if (currentReport.coordinates) {
+                updateGPSDisplay(currentReport.coordinates);
+            }
+            
+            layoutCount = currentReport.layouts ? currentReport.layouts.length : 1;
+            document.getElementById('layoutCount').value = layoutCount;
+            
+            renderPhotos();
+            renderAllLayouts();
+            loadTeamMembers();
+        }
+
+        function clearDraft() {
+            localStorage.removeItem('plcis_draft');
+        }
 
         // Role Management
         function openRoleSelector() {
@@ -1353,7 +1537,6 @@
         // Map Snapshot with CORS handling
         function captureMapSnapshot() {
             const activePanel = document.querySelector('.map-panel.active');
-            const iframe = activePanel.querySelector('iframe');
             const mapType = activePanel.id === 'googleMapPanel' ? 'Google Maps' : 'OneMap';
             
             showLoading(true);
@@ -1401,7 +1584,7 @@
             currentReport.mapSnapshot = snapshotData;
             
             const photo = {
-                id: Date.now(),
+                id: String(Date.now()),
                 src: snapshotData,
                 timestamp: new Date().toLocaleString(),
                 coordinates: currentReport.coordinates ? {...currentReport.coordinates} : null,
@@ -1425,7 +1608,7 @@
                     
                     reader.onload = function(e) {
                         const photo = {
-                            id: Date.now() + Math.random(),
+                            id: String(Date.now() + Math.random()),
                             src: e.target.result,
                             timestamp: new Date().toLocaleString(),
                             coordinates: currentReport.coordinates ? {...currentReport.coordinates} : null,
@@ -1462,16 +1645,17 @@
             }
             
             container.innerHTML = currentReport.photos.map((photo, index) => {
-                const linkedPin = getAllPins().find(p => p.linkedPhotoId === photo.id);
+                const linkedPins = getAllPins().filter(p => p.linkedPhotoIds && p.linkedPhotoIds.includes(photo.id));
+                const isMultiLinked = linkedPins.length > 0;
                 return `
-                <div class="photo-item ${selectedPhotoIndex === index ? 'selected' : ''} ${linkedPin ? 'has-pin' : ''}" 
+                <div class="photo-item ${selectedPhotoIndex === index ? 'selected' : ''} ${isMultiLinked ? 'has-pin' : ''}" 
                      onclick="selectPhotoForPinning(${index})" 
                      ondblclick="openPhotoModal(${index})">
                     <img src="${photo.src}" alt="Site photo ${index + 1}">
                     <div class="photo-badge">${index + 1}</div>
-                    ${linkedPin ? `
-                        <div class="photo-pin-badge">
-                            <i class="fas fa-thumbtack"></i> Pin ${getAllPins().indexOf(linkedPin) + 1}
+                    ${isMultiLinked ? `
+                        <div class="multi-photo-indicator">
+                            <i class="fas fa-thumbtack"></i> ${linkedPins.length} pin${linkedPins.length > 1 ? 's' : ''}
                         </div>
                     ` : ''}
                     <button class="photo-delete" onclick="event.stopPropagation(); deletePhoto(${index})">
@@ -1530,9 +1714,14 @@
             if (confirm('Delete this photo?')) {
                 const photo = currentReport.photos[index];
                 
+                // Remove from all pins
                 currentReport.layouts.forEach(layout => {
                     if (layout.pins) {
-                        layout.pins = layout.pins.filter(p => p.linkedPhotoId !== photo.id);
+                        layout.pins.forEach(pin => {
+                            if (pin.linkedPhotoIds) {
+                                pin.linkedPhotoIds = pin.linkedPhotoIds.filter(id => id !== photo.id);
+                            }
+                        });
                     }
                 });
                 
@@ -1564,13 +1753,18 @@
             document.getElementById('photoDescription').value = photo.description || '';
             document.getElementById('photoTags').value = photo.tags ? photo.tags.join(', ') : '';
             
-            const linkedPin = getAllPins().find(p => p.linkedPhotoId === photo.id);
+            const linkedPins = getAllPins().filter(p => p.linkedPhotoIds && p.linkedPhotoIds.includes(photo.id));
             const linkedRow = document.getElementById('linkedPinRow');
             const linkedText = document.getElementById('modalLinkedPin');
             
-            if (linkedPin) {
+            if (linkedPins.length > 0) {
                 linkedRow.style.display = 'flex';
-                linkedText.textContent = `Pin ${getAllPins().indexOf(linkedPin) + 1} (${pinTypes[linkedPin.type].label})`;
+                const pinNums = linkedPins.map(p => {
+                    const layoutIdx = currentReport.layouts.findIndex(l => l.pins && l.pins.includes(p));
+                    const pinIdx = currentReport.layouts[layoutIdx].pins.indexOf(p);
+                    return `L${layoutIdx + 1}-P${pinIdx + 1}`;
+                }).join(', ');
+                linkedText.textContent = `${linkedPins.length} pin(s): ${pinNums}`;
             } else {
                 linkedRow.style.display = 'none';
             }
@@ -1679,7 +1873,7 @@
                         <div class="layout-upload-zone" onclick="document.getElementById('layoutInput-${index}').click()">
                             <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                             <div class="upload-text">Click to upload plan for Layout ${index + 1}</div>
-                            <div class="upload-hint">Supports: JPG, PNG, PDF (Max 10MB)</div>
+                            <div class="upload-hint">Supports: JPG, PNG, PDF (Max 50MB)</div>
                         </div>
                         <input type="file" id="layoutInput-${index}" class="file-input" accept="image/*,.pdf,application/pdf" onchange="loadLayoutFile(${index}, this)">
                     ` : `
@@ -1974,11 +2168,11 @@
                 realCoords: currentReport.coordinates,
                 description: '',
                 timestamp: new Date().toLocaleString(),
-                linkedPhotoId: null
+                linkedPhotoIds: [] // Changed to array for multiple photos
             };
             
             if (currentPinType === 'photo' && selectedPhotoIndex !== null) {
-                pendingPin.linkedPhotoId = currentReport.photos[selectedPhotoIndex].id;
+                pendingPin.linkedPhotoIds = [currentReport.photos[selectedPhotoIndex].id];
                 pendingPin.description = currentReport.photos[selectedPhotoIndex].description || `Photo ${selectedPhotoIndex + 1}`;
                 finalizePin(index, pendingPin);
             } else if (currentPinType === 'photo' && currentReport.photos.length > 0) {
@@ -2008,7 +2202,7 @@
             
             layout.pins.push(pin);
             
-            if (pin.linkedPhotoId && selectedPhotoIndex !== null) {
+            if (pin.linkedPhotoIds && pin.linkedPhotoIds.length > 0 && selectedPhotoIndex !== null) {
                 selectedPhotoIndex = null;
                 document.getElementById('selectedPhotoInfo').style.display = 'none';
                 renderPhotos();
@@ -2016,7 +2210,7 @@
             
             renderAllLayouts();
             
-            const linkInfo = pin.linkedPhotoId ? ' (linked to photo)' : '';
+            const linkInfo = pin.linkedPhotoIds && pin.linkedPhotoIds.length > 0 ? ` (${pin.linkedPhotoIds.length} photo(s))` : '';
             showToast(`Pin ${layout.pins.length} placed: ${pinTypes[pin.type].label}${linkInfo}`);
             
             pendingPin = null;
@@ -2036,21 +2230,172 @@
                 pinEl.style.left = (pin.x * 100) + '%';
                 pinEl.style.top = (pin.y * 100) + '%';
                 
-                const linkedPhoto = pin.linkedPhotoId ? currentReport.photos.find(p => p.id === pin.linkedPhotoId) : null;
+                const linkedPhotos = pin.linkedPhotoIds ? pin.linkedPhotoIds.map(id => currentReport.photos.find(p => p.id === id)).filter(Boolean) : [];
                 
                 pinEl.innerHTML = `
-                    <div class="pin-head" style="background: ${pin.color};">
+                    <div class="pin-head" style="background: ${pin.color || pinTypes[pin.type].color};">
                         <span class="pin-number">${pinIndex + 1}</span>
                     </div>
-                    ${linkedPhoto ? `<div class="pin-photo-indicator"><i class="fas fa-image"></i></div>` : ''}
+                    ${linkedPhotos.length > 0 ? `<div class="pin-photo-indicator">${linkedPhotos.length > 1 ? linkedPhotos.length : '<i class="fas fa-image"></i>'}</div>` : ''}
                     <div class="pin-tooltip">
                         ${pinTypes[pin.type].label}: ${pin.description || 'No description'}
-                        ${linkedPhoto ? `<br>Linked to Photo ${currentReport.photos.indexOf(linkedPhoto) + 1}` : ''}
+                        ${linkedPhotos.length > 0 ? `<br>Linked: ${linkedPhotos.length} photo(s)` : ''}
                     </div>
                 `;
                 
+                // Right-click to change color or manage photos
+                pinEl.addEventListener('contextmenu', (e) => {
+                    e.preventDefault();
+                    showPinContextMenu(e, index, pin.id);
+                });
+                
+                // Click to manage photos
+                pinEl.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openAddPhotoToPinModal(index, pin.id);
+                });
+                
                 pinsLayer.appendChild(pinEl);
             });
+        }
+
+        function showPinContextMenu(e, layoutIndex, pinId) {
+            const menu = document.createElement('div');
+            menu.style.cssText = `
+                position: fixed;
+                background: white;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10000;
+                padding: 0.5rem;
+                min-width: 150px;
+            `;
+            menu.innerHTML = `
+                <div style="padding: 0.5rem; cursor: pointer; border-radius: 4px; hover: background: #f8fafc;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'" onclick="openPinColorPicker(${layoutIndex}, ${pinId}); this.remove();">
+                    <i class="fas fa-palette" style="margin-right: 0.5rem;"></i> Change Color
+                </div>
+                <div style="padding: 0.5rem; cursor: pointer; border-radius: 4px;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='white'" onclick="openAddPhotoToPinModal(${layoutIndex}, ${pinId}); this.remove();">
+                    <i class="fas fa-images" style="margin-right: 0.5rem;"></i> Manage Photos
+                </div>
+                <div style="padding: 0.5rem; cursor: pointer; border-radius: 4px; color: var(--danger);" onmouseover="this.style.background='#fee2e2'" onmouseout="this.style.background='white'" onclick="deleteLayoutPin(${layoutIndex}, ${pinId}); this.remove();">
+                    <i class="fas fa-trash" style="margin-right: 0.5rem;"></i> Delete Pin
+                </div>
+            `;
+            menu.style.left = e.clientX + 'px';
+            menu.style.top = e.clientY + 'px';
+            document.body.appendChild(menu);
+            
+            const closeMenu = () => {
+                if (menu.parentNode) menu.remove();
+                document.removeEventListener('click', closeMenu);
+            };
+            setTimeout(() => document.addEventListener('click', closeMenu), 0);
+        }
+
+        function openPinColorPicker(layoutIndex, pinId) {
+            editingPinColor = { layoutIndex, pinId };
+            const pin = currentReport.layouts[layoutIndex].pins.find(p => p.id === pinId);
+            document.getElementById('pinColorInput').value = pin.color || pinTypes[pin.type].color;
+            document.getElementById('pinColorModal').classList.add('active');
+        }
+
+        function closePinColorModal() {
+            document.getElementById('pinColorModal').classList.remove('active');
+            editingPinColor = null;
+        }
+
+        function setPresetColor(color) {
+            document.getElementById('pinColorInput').value = color;
+        }
+
+        function applyPinColor() {
+            if (!editingPinColor) return;
+            
+            const { layoutIndex, pinId } = editingPinColor;
+            const pin = currentReport.layouts[layoutIndex].pins.find(p => p.id === pinId);
+            
+            if (pin) {
+                pin.color = document.getElementById('pinColorInput').value;
+                renderAllLayouts();
+                showToast('Pin color updated');
+            }
+            
+            closePinColorModal();
+        }
+
+        function openAddPhotoToPinModal(layoutIndex, pinId) {
+            currentLayoutIndex = layoutIndex;
+            const pin = currentReport.layouts[layoutIndex].pins.find(p => p.id === pinId);
+            
+            // Show currently linked photos
+            const linkedList = document.getElementById('linkedPhotosList');
+            if (pin.linkedPhotoIds && pin.linkedPhotoIds.length > 0) {
+                linkedList.innerHTML = pin.linkedPhotoIds.map((photoId, idx) => {
+                    const photo = currentReport.photos.find(p => p.id === photoId);
+                    if (!photo) return '';
+                    const photoIndex = currentReport.photos.indexOf(photo);
+                    return `
+                        <div class="linked-photo-item">
+                            <img src="${photo.src}" alt="Photo ${photoIndex + 1}">
+                            <span>Photo ${photoIndex + 1}</span>
+                            <button class="remove-photo-btn" onclick="removePhotoFromPin(${layoutIndex}, ${pinId}, '${photoId}')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                linkedList.innerHTML = '<p style="color: var(--text-secondary); font-size: 0.875rem;">No photos linked yet.</p>';
+            }
+            
+            // Show available photos to add
+            const grid = document.getElementById('addPhotoGrid');
+            const availablePhotos = currentReport.photos.filter(p => !pin.linkedPhotoIds || !pin.linkedPhotoIds.includes(p.id));
+            
+            if (availablePhotos.length === 0) {
+                grid.innerHTML = '<p style="color: var(--text-secondary);">All photos are already linked to this pin.</p>';
+            } else {
+                grid.innerHTML = availablePhotos.map((photo) => {
+                    const idx = currentReport.photos.indexOf(photo);
+                    return `
+                        <div class="photo-select-item" onclick="addPhotoToPin(${layoutIndex}, ${pinId}, '${photo.id}')">
+                            <img src="${photo.src}" alt="Photo ${idx + 1}">
+                            <span class="photo-select-number">${idx + 1}</span>
+                        </div>
+                    `;
+                }).join('');
+            }
+            
+            document.getElementById('addPhotoToPinModal').classList.add('active');
+        }
+
+        function closeAddPhotoToPinModal() {
+            document.getElementById('addPhotoToPinModal').classList.remove('active');
+        }
+
+        function addPhotoToPin(layoutIndex, pinId, photoId) {
+            const pin = currentReport.layouts[layoutIndex].pins.find(p => p.id === pinId);
+            if (!pin.linkedPhotoIds) pin.linkedPhotoIds = [];
+            
+            if (!pin.linkedPhotoIds.includes(photoId)) {
+                pin.linkedPhotoIds.push(photoId);
+                renderPhotos();
+                renderAllLayouts();
+                openAddPhotoToPinModal(layoutIndex, pinId); // Refresh modal
+                showToast('Photo added to pin');
+            }
+        }
+
+        function removePhotoFromPin(layoutIndex, pinId, photoId) {
+            const pin = currentReport.layouts[layoutIndex].pins.find(p => p.id === pinId);
+            if (pin.linkedPhotoIds) {
+                pin.linkedPhotoIds = pin.linkedPhotoIds.filter(id => id !== photoId);
+                renderPhotos();
+                renderAllLayouts();
+                openAddPhotoToPinModal(layoutIndex, pinId); // Refresh modal
+                showToast('Photo removed from pin');
+            }
         }
 
         function renderPinListHTML(pins, layoutIndex) {
@@ -2059,17 +2404,33 @@
             }
             
             return pins.map((pin, idx) => {
-                const linkedPhoto = pin.linkedPhotoId ? currentReport.photos.find(p => p.id === pin.linkedPhotoId) : null;
-                const photoThumb = linkedPhoto ? `<img src="${linkedPhoto.src}" style="width: 30px; height: 30px; border-radius: 4px; object-fit: cover; margin-left: 8px;">` : '';
+                const linkedPhotos = pin.linkedPhotoIds ? pin.linkedPhotoIds.map(id => currentReport.photos.find(p => p.id === id)).filter(Boolean) : [];
+                const photoThumbs = linkedPhotos.map(photo => {
+                    const pIdx = currentReport.photos.indexOf(photo);
+                    return `<img src="${photo.src}" class="linked-photo-mini" title="Photo ${pIdx + 1}" onclick="openPhotoModal(${pIdx})">`;
+                }).join('');
+                
+                // Format photo links: photo 1 (tags 1), photo 2 (tags 2)
+                const photoLinksStr = linkedPhotos.map(photo => {
+                    const pIdx = currentReport.photos.indexOf(photo);
+                    const tagsStr = photo.tags && photo.tags.length > 0 ? ` (${photo.tags.join(', ')})` : '';
+                    return `photo ${pIdx + 1}${tagsStr}`;
+                }).join(', ');
+                
+                const description = pin.description || 'No description';
+                const fullDesc = photoLinksStr ? `${description} [${photoLinksStr}]` : description;
                 
                 return `
                 <div class="pin-item" style="padding: 0.5rem;">
-                    <div class="pin-number" style="width: 24px; height: 24px; font-size: 0.75rem; background: ${pin.color};">${idx + 1}</div>
+                    <div class="pin-number" style="width: 24px; height: 24px; font-size: 0.75rem; background: ${pin.color || pinTypes[pin.type].color}; cursor: pointer;" onclick="openPinColorPicker(${layoutIndex}, ${pin.id})" title="Click to change color">${idx + 1}</div>
                     <div class="pin-info">
                         <div class="pin-type" style="font-size: 0.8125rem;">${pinTypes[pin.type].label}</div>
-                        <div class="pin-desc" style="font-size: 0.75rem;">${pin.description || 'No description'}</div>
+                        <div class="pin-desc" style="font-size: 0.75rem;">${fullDesc}</div>
+                        ${linkedPhotos.length > 0 ? `<div class="linked-photos-list">${photoThumbs}</div>` : ''}
                     </div>
-                    ${photoThumb}
+                    <button class="pin-btn link-btn" onclick="openAddPhotoToPinModal(${layoutIndex}, ${pin.id})" title="Manage photos" style="width: 28px; height: 28px;">
+                        <i class="fas fa-images"></i>
+                    </button>
                     <button class="pin-btn" onclick="deleteLayoutPin(${layoutIndex}, ${pin.id})" style="width: 28px; height: 28px;">
                         <i class="fas fa-trash"></i>
                     </button>
@@ -2090,6 +2451,15 @@
             if (!input.files || !input.files[0]) return;
             
             const file = input.files[0];
+            
+            // Check file size (50MB limit)
+            const maxSize = 50 * 1024 * 1024; // 50MB in bytes
+            if (file.size > maxSize) {
+                showToast('File too large! Maximum size is 50MB.');
+                input.value = '';
+                return;
+            }
+            
             const isPDF = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf');
             
             showLoading(true);
@@ -2257,7 +2627,7 @@
 
         function selectPhotoForLink(index) {
             if (pendingPin) {
-                pendingPin.linkedPhotoId = currentReport.photos[index].id;
+                pendingPin.linkedPhotoIds = [currentReport.photos[index].id];
                 pendingPin.description = currentReport.photos[index].description || `Photo ${index + 1}`;
                 closeLinkPhotoModal();
                 finalizePin(currentLayoutIndex, pendingPin);
@@ -2487,6 +2857,9 @@
             
             localStorage.setItem('plcis_reports', JSON.stringify(reports));
             
+            // Clear draft after successful save
+            clearDraft();
+            
             showToast('Report saved successfully!');
             
             setTimeout(() => {
@@ -2496,7 +2869,7 @@
             }, 300);
         }
 
-        // FIXED: Preview Report with Pin Icons and High Resolution
+        // FIXED: Preview Report with proper print layout and team members
         async function previewReport(report = currentReport) {
             const modal = document.getElementById('pdfModal');
             const content = document.getElementById('pdfPreviewContent');
@@ -2522,24 +2895,43 @@
                             pinsTable = `
                                 <table style="width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 15px; break-inside: avoid;">
                                     <tr style="background: #1e3a8a; color: white;">
-                                        <th style="padding: 6px; text-align: center; width: 40px;">Pin</th>
-                                        <th style="padding: 6px;">Type</th>
-                                        <th style="padding: 6px;">Description</th>
-                                        <th style="padding: 6px; text-align: center; width: 60px;">Photo</th>
+                                        <th style="padding: 10px; text-align: center; width: 50px;">Pin</th>
+                                        <th style="padding: 10px; text-align: left; width: 120px;">Type & Time</th>
+                                        <th style="padding: 10px; text-align: left; width: 180px;">Description</th>
+                                        <th style="padding: 10px; text-align: left;">Linked Photos & Tags</th>
                                     </tr>
                                     ${pins.map(pin => {
-                                        const linkedPhoto = pin.linkedPhotoId ? report.photos.find(p => p.id === pin.linkedPhotoId) : null;
+                                        const linkedPhotos = pin.linkedPhotoIds ? pin.linkedPhotoIds.map(id => report.photos.find(p => p.id === id)).filter(Boolean) : [];
+                                        
+                                        // Generate photo cells content for the "Photos" column
+                                        const photoContentHtml = linkedPhotos.map(photo => {
+                                            const pIdx = report.photos.indexOf(photo);
+                                            const tagsStr = photo.tags && photo.tags.length > 0 ? `<div style="margin-top:2px; font-weight:bold; color:var(--primary);">[${photo.tags.join(', ')}]</div>` : '';
+                                            return `
+                                                <div style="display:inline-block; margin-right:10px; margin-bottom:5px; vertical-align:top; text-align:center; border:1px solid #eee; padding:4px; border-radius:4px; background:#fff;">
+                                                    <img src="${photo.src}" style="height:60px; width:auto; display:block; margin:0 auto; border-radius:2px;">
+                                                    <div style="font-size:7pt; margin-top:2px; color:#666;">Photo ${pIdx + 1}</div>
+                                                    ${tagsStr}
+                                                </div>
+                                            `;
+                                        }).join('');
+                                        
+                                        const description = pin.description || 'N/A';
+
                                         return `
-                                            <tr>
-                                                <td style="border: 1px solid #e2e8f0; padding: 6px; text-align: center;">
-                                                    <div style="width: 24px; height: 24px; border-radius: 50% 50% 50% 0; background: ${pin.color}; transform: rotate(-45deg); margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-                                                        <span style="transform: rotate(45deg); color: white; font-weight: bold; font-size: 10px;">${pins.indexOf(pin) + 1}</span>
+                                            <tr style="break-inside: avoid;">
+                                                <td style="border: 1px solid #e2e8f0; padding: 8px; text-align: center; vertical-align: middle;">
+                                                    <div style="width: 28px; height: 28px; border-radius: 50% 50% 50% 0; background: ${pin.color || pinTypes[pin.type].color}; transform: rotate(-45deg); margin: 0 auto; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                                                        <span style="transform: rotate(45deg); color: white; font-weight: bold; font-size: 11px;">${pins.indexOf(pin) + 1}</span>
                                                     </div>
                                                 </td>
-                                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${pinTypes[pin.type].label}</td>
-                                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${pin.description || 'N/A'}</td>
-                                                <td style="border: 1px solid #e2e8f0; padding: 6px; text-align: center;">
-                                                    ${linkedPhoto ? `<span style="color: var(--success);">✓ ${report.photos.indexOf(linkedPhoto) + 1}</span>` : '-'}
+                                                <td style="border: 1px solid #e2e8f0; padding: 8px; vertical-align: middle;">
+                                                    <div style="font-weight:bold; color:var(--primary);">${pinTypes[pin.type].label}</div>
+                                                    <div style="font-size:8pt; color:#666;">${pin.timestamp || ''}</div>
+                                                </td>
+                                                <td style="border: 1px solid #e2e8f0; padding: 8px; vertical-align: middle;">${description}</td>
+                                                <td style="border: 1px solid #e2e8f0; padding: 8px; background:#f9fafb;">
+                                                    ${photoContentHtml || '<span style="color:#999; font-style:italic;">No photos linked</span>'}
                                                 </td>
                                             </tr>
                                         `;
@@ -2571,12 +2963,12 @@
                 
                 // Photos HTML
                 const photosHtml = report.photos.map((photo, idx) => {
-                    const linkedPin = getAllPinsFromReport(report).find(p => p.linkedPhotoId === photo.id);
+                    const linkedPins = getAllPinsFromReport(report).filter(p => p.linkedPhotoIds && p.linkedPhotoIds.includes(photo.id));
                     return `
                     <div style="margin-bottom: 15px; break-inside: avoid; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden;">
                         <div style="background: #f8fafc; padding: 10px; border-bottom: 1px solid #e2e8f0;">
                             <strong>Photo ${idx + 1}</strong>
-                            ${linkedPin ? `<span style="color: var(--success); margin-left: 10px;"><i class="fas fa-thumbtack"></i> Linked to Pin</span>` : ''}
+                            ${linkedPins.length > 0 ? `<span style="color: var(--success); margin-left: 10px;"><i class="fas fa-thumbtack"></i> ${linkedPins.length} pin(s)</span>` : ''}
                         </div>
                         <div style="padding: 10px;">
                             <img src="${photo.src}" style="max-width: 100%; max-height: 200px; display: block; margin: 0 auto; image-rendering: -webkit-optimize-contrast;">
@@ -2588,6 +2980,27 @@
                         </div>
                     </div>
                 `}).join('');
+                
+                // Team Members HTML
+                const teamMembersHtml = report.teamMembers && report.teamMembers.length > 0 ? `
+                    <h2 style="color: #1e3a8a; font-size: 12pt; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin: 15px 0 10px;">👥 Team Members</h2>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 9pt; margin-bottom: 15px;">
+                        <tr style="background: #1e3a8a; color: white;">
+                            <th style="padding: 6px; text-align: left;">Name</th>
+                            <th style="padding: 6px; text-align: left;">Role</th>
+                            <th style="padding: 6px; text-align: left;">Email</th>
+                            <th style="padding: 6px; text-align: left;">Contact</th>
+                        </tr>
+                        ${report.teamMembers.map(member => `
+                            <tr>
+                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${member.name}</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${roleConfig[member.role].name}</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${member.email}</td>
+                                <td style="border: 1px solid #e2e8f0; padding: 6px;">${member.contact || '-'}</td>
+                            </tr>
+                        `).join('')}
+                    </table>
+                ` : '<p style="color: #64748b; font-style: italic;">No team members added.</p>';
                 
                 content.innerHTML = `
                     <div class="a4-preview">
@@ -2613,7 +3026,7 @@
                                     <td>${report.weather}</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding: 4px 0;"><strong>Engineer:</strong></td>
+                                    <td style="padding: 4px 0;"><strong>Name:</strong></td>
                                     <td>${report.engineer || 'N/A'}</td>
                                     <td style="padding: 4px 0;"><strong>Role:</strong></td>
                                     <td>${report.role ? roleConfig[report.role].name : 'N/A'}</td>
@@ -2641,6 +3054,8 @@
                                 <p style="line-height: 1.5; font-size: 10pt;">${report.nextSteps || 'No next steps defined.'}</p>
                             </div>
                         </div>
+                        
+                        ${teamMembersHtml}
                         
                         ${layoutsWithContent.length > 0 ? `
                         <h2 style="color: #1e3a8a; font-size: 12pt; border-bottom: 2px solid #e2e8f0; padding-bottom: 5px; margin: 20px 0 15px; page-break-before: always;">📐 Site Plans (${layoutsWithContent.length} Layouts)</h2>
@@ -2689,7 +3104,14 @@
                     const ctx = canvas.getContext('2d');
                     
                     // Set canvas size to match image - USE HIGH RESOLUTION
-                    const scaleFactor = highRes ? 2 : 1; // 2x for high resolution
+                    // Safety limit: max 8000px dimension to avoid browser crash or memory issues with 50MB files
+                    const MAX_CANVAS_DIM = 8000;
+                    let scaleFactor = highRes ? 2 : 1; 
+                    
+                    if (img.naturalWidth * scaleFactor > MAX_CANVAS_DIM || img.naturalHeight * scaleFactor > MAX_CANVAS_DIM) {
+                        scaleFactor = Math.min(MAX_CANVAS_DIM / img.naturalWidth, MAX_CANVAS_DIM / img.naturalHeight);
+                    }
+
                     canvas.width = img.naturalWidth * scaleFactor;
                     canvas.height = img.naturalHeight * scaleFactor;
                     
@@ -2697,67 +3119,67 @@
                     ctx.imageSmoothingEnabled = true;
                     ctx.imageSmoothingQuality = 'high';
                     
-                    // Scale context for high resolution
+                    // Scale context for resolution
                     ctx.scale(scaleFactor, scaleFactor);
                     
                     // Draw the base image
                     ctx.drawImage(img, 0, 0);
                     
-                    // Draw pins as PIN ICONS (map marker style)
+                    // Draw pins as PIN ICONS (map marker style) - ENLARGED for better visibility
                     if (layout.pins && layout.pins.length > 0) {
                         layout.pins.forEach((pin, idx) => {
                             const x = pin.x * img.naturalWidth;
                             const y = pin.y * img.naturalHeight;
                             
-                            // Draw pin marker (map pin style)
+                            // Draw pin marker (map pin style) - INCREASED 5X
                             ctx.save();
                             ctx.translate(x, y);
                             
-                            // Pin shadow
+                            // Pin shadow - INCREASED 5X
                             ctx.beginPath();
-                            ctx.ellipse(0, 2, 8, 4, 0, 0, 2 * Math.PI);
+                            ctx.ellipse(0, 10, 60, 30, 0, 0, 2 * Math.PI);
                             ctx.fillStyle = 'rgba(0,0,0,0.3)';
                             ctx.fill();
                             
-                            // Pin head (teardrop shape)
+                            // Pin head (teardrop shape) - INCREASED 5X
                             ctx.beginPath();
                             ctx.moveTo(0, 0);
-                            ctx.bezierCurveTo(-12, -12, -12, -24, 0, -30);
-                            ctx.bezierCurveTo(12, -24, 12, -12, 0, 0);
+                            ctx.bezierCurveTo(-90, -90, -90, -180, 0, -240);
+                            ctx.bezierCurveTo(90, -180, 90, -90, 0, 0);
                             ctx.closePath();
-                            ctx.fillStyle = pin.color;
+                            ctx.fillStyle = pin.color || pinTypes[pin.type].color;
                             ctx.fill();
                             ctx.strokeStyle = 'white';
-                            ctx.lineWidth = 3;
+                            ctx.lineWidth = 20;
                             ctx.stroke();
                             
-                            // Inner circle
+                            // Inner circle - INCREASED 5X
                             ctx.beginPath();
-                            ctx.arc(0, -18, 8, 0, 2 * Math.PI);
+                            ctx.arc(0, -150, 60, 0, 2 * Math.PI);
                             ctx.fillStyle = 'white';
                             ctx.fill();
                             
-                            // Pin number
-                            ctx.fillStyle = pin.color;
-                            ctx.font = 'bold 12px Arial';
+                            // Pin number - INCREASED 5X
+                            ctx.fillStyle = pin.color || pinTypes[pin.type].color;
+                            ctx.font = 'bold 80px Arial';
                             ctx.textAlign = 'center';
                             ctx.textBaseline = 'middle';
-                            ctx.fillText(idx + 1, 0, -18);
+                            ctx.fillText(idx + 1, 0, -150);
                             
-                            // Photo indicator
-                            if (pin.linkedPhotoId) {
+                            // Photo indicator - INCREASED 5X
+                            if (pin.linkedPhotoIds && pin.linkedPhotoIds.length > 0) {
                                 ctx.beginPath();
-                                ctx.arc(10, -5, 7, 0, 2 * Math.PI);
+                                ctx.arc(80, -50, 50, 0, 2 * Math.PI);
                                 ctx.fillStyle = '#f59e0b';
                                 ctx.fill();
                                 ctx.strokeStyle = 'white';
-                                ctx.lineWidth = 2;
+                                ctx.lineWidth = 12.5;
                                 ctx.stroke();
                                 
-                                // Camera icon
+                                // Camera icon or count
                                 ctx.fillStyle = 'white';
-                                ctx.font = '10px Arial';
-                                ctx.fillText('📷', 10, -5);
+                                ctx.font = pin.linkedPhotoIds.length > 1 ? 'bold 60px Arial' : '70px Arial';
+                                ctx.fillText(pin.linkedPhotoIds.length > 1 ? pin.linkedPhotoIds.length : '📷', 80, -50);
                             }
                             
                             ctx.restore();
@@ -2842,6 +3264,7 @@
             document.getElementById('gpsStatus').className = 'gps-status error';
             document.getElementById('gpsText').textContent = 'GPS Not Active - Select location source below';
             
+            clearDraft();
             initializeLayouts();
             renderPhotos();
             loadReportsList();
@@ -2849,6 +3272,10 @@
 
         function loadReportsList() {
             const container = document.getElementById('reportsList');
+            
+            // Load from localStorage
+            const saved = localStorage.getItem('plcis_reports');
+            reports = saved ? JSON.parse(saved) : [];
             
             if (reports.length === 0) {
                 container.innerHTML = `
@@ -2874,7 +3301,7 @@
                         <div class="report-meta">
                             <i class="fas fa-map-marker-alt"></i> ${report.location} | 
                             <i class="fas fa-calendar"></i> ${report.date} | 
-                            <i class="fas fa-user"></i> ${report.engineer || 'No engineer'}
+                            <i class="fas fa-user"></i> ${report.engineer || 'No name'}
                         </div>
                         <div class="report-badges">
                             <span class="badge badge-photos"><i class="fas fa-camera"></i> ${report.photos.length}</span>
@@ -2909,17 +3336,21 @@
                 currentReport.layouts = [];
             }
             
-            document.getElementById('projectName').value = report.projectName;
-            document.getElementById('siteLocation').value = report.location;
-            document.getElementById('reportDate').value = report.date;
-            document.getElementById('engineerName').value = report.engineer;
-            document.getElementById('weather').value = report.weather;
-            document.getElementById('activities').value = report.activities;
-            document.getElementById('issues').value = report.issues;
-            document.getElementById('nextSteps').value = report.nextSteps;
+            document.getElementById('projectName').value = report.projectName || '';
+            document.getElementById('siteLocation').value = report.location || '';
+            document.getElementById('reportDate').value = report.date || new Date().toISOString().split('T')[0];
+            document.getElementById('engineerName').value = report.engineer || '';
+            document.getElementById('weather').value = report.weather || 'Clear';
+            document.getElementById('activities').value = report.activities || '';
+            document.getElementById('issues').value = report.issues || '';
+            document.getElementById('nextSteps').value = report.nextSteps || '';
             
             if (report.coordinates) {
                 updateGPSDisplay(report.coordinates);
+            } else {
+                document.getElementById('coordDisplay').style.display = 'none';
+                document.getElementById('gpsStatus').className = 'gps-status error';
+                document.getElementById('gpsText').textContent = 'GPS Not Active - Select location source below';
             }
             
             layoutCount = currentReport.layouts.length || 1;
@@ -2930,6 +3361,7 @@
             
             renderAllLayouts();
             renderPhotos();
+            loadTeamMembers();
             
             document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
